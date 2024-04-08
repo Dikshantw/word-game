@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
-const GuessInput = ({ handleGuess }) => {
+interface Props {
+  handleGuess: (guess: string) => void;
+}
+
+const GuessInput = ({ handleGuess }: Props) => {
   const [guess, setGuess] = useState<string>("");
-  function handleSubmit(event) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     handleGuess(guess);
     setGuess("");

@@ -1,4 +1,8 @@
-const Block = ({ word }) => {
+interface BlockProp {
+  word: string;
+}
+
+const Block = ({ word }: BlockProp) => {
   return (
     <p className="flex gap-1 mb-1">
       {word.split("").map((letter) => (

@@ -1,6 +1,10 @@
 import Block from "./Block";
 
-const GuessResult = ({ guesses }) => {
+interface GuessesProp {
+  guesses: string[];
+}
+
+const GuessResult = ({ guesses }: GuessesProp) => {
   return (
     <>
       <div className="flex-1 flex flex-col justify-center">

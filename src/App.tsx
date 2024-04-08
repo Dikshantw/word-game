@@ -3,8 +3,8 @@ import GuessInput from "./component/GuessInput";
 import GuessResult from "./component/GuessResult";
 
 function App() {
-  const [guesses, setGuesses] = useState([]);
-  function handleGuess(guess) {
+  const [guesses, setGuesses] = useState<string[]>([]);
+  function handleGuess(guess: string) {
     const copyGuesses = [...guesses];
     copyGuesses.push(guess);
     setGuesses(copyGuesses);
