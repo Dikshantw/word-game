@@ -7,9 +7,9 @@ interface GuessesProp {
 const GuessResult = ({ guesses }: GuessesProp) => {
   return (
     <>
-      <div className="flex-1 flex flex-col justify-center">
-        {guesses.map((guess) => (
-          <Block key={guess} word={guess} />
+      <div className="flex flex-1 flex-col justify-center items-center">
+        {[0, 1, 2, 3, 4, 5].map((num) => (
+          <Block key={num} word={guesses[num]} />
         ))}
       </div>
     </>
