@@ -2,9 +2,10 @@ import { FormEvent, useState } from "react";
 
 interface Props {
   handleGuess: (guess: string) => void;
+  gameStatus: string;
 }
 
-const GuessInput = ({ handleGuess }: Props) => {
+const GuessInput = ({ gameStatus, handleGuess }: Props) => {
   const [guess, setGuess] = useState<string>("");
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -16,6 +17,7 @@ const GuessInput = ({ handleGuess }: Props) => {
     <form onSubmit={handleSubmit} className="flex flex-col gap-2 h-24">
       <input
         required
+        disabled={gameStatus !== "running"}
         type="text"
         id="guess"
         className="block w-[250px] border-2 border-gray-400 py-2 px-4"
